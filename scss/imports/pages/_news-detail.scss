@@ -1,0 +1,229 @@
+.newsdetailpage {
+  .scbanner {
+    &__wrapper {
+      padding: 0 30px;
+    }
+    &__control {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100px;
+      .item {
+        &:last-child {
+          margin-left: 24px;
+          svg {
+            display: block;
+          }
+        }
+        &-link {
+          font-size: 1.1rem;
+          line-height: 3rem;
+          font-weight: bold;
+        }
+      }
+    }
+    &__image {
+      img {
+        display: block;
+      }
+    }
+  }
+  .article {
+    padding-top: 60px;
+    padding-bottom: 118px;
+    &__wrapper {
+      padding: 0 30px;
+    }
+    &__title {
+      font-size: 2rem;
+      line-height: 3.2rem;
+      letter-spacing: 2px;
+      max-width: 756px;
+      margin-bottom: 30px;
+    }
+    &__summary {
+      max-width: 680px;
+      line-height: 2.2rem;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      margin-bottom: 25px;
+    }
+    &__meta {
+      line-height: 2.2rem;
+      font-style: italic;
+      letter-spacing: 1.2px;
+      margin-bottom: 35px;
+    }
+    &__body {
+      line-height: 2.2rem;
+      letter-spacing: 1.2px;
+      max-width: 670px;
+    }
+  }
+  .screlated {
+    &__wrapper {
+      padding: 0 15px;
+    }
+    &__title {
+      --wLine: 415px;
+      font-weight: bold;
+      line-height: 2.2rem;
+      letter-spacing: 1.1px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 42px;
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        height: 1px;
+        width: var(--wLine);
+        background-color: $gray-line-cl;
+      }
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        height: 1px;
+        width: var(--wLine);
+        background-color: $gray-line-cl;
+      }
+    }
+    &__list {
+      margin-bottom: 80px;
+      &:before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+  @include md {
+    .screlated {
+      &__title {
+        --wLine: 355px;
+      }
+      &__list {
+        --wItem: 1fr;
+        grid-template-columns: repeat(3, var(--wItem));
+      }
+    }
+  }
+  @include sm {
+    .screlated {
+      &__title {
+        --wLine: 235px;
+      }
+      &__list {
+        --wItem: 1fr;
+        grid-template-columns: repeat(1, var(--wItem));
+        &-item {
+          display: flex;
+          gap: 30px;
+          margin-bottom: 30px;
+          .image {
+            width: 100%;
+            padding-bottom: 30.5%;
+          }
+          .textbox {
+            .title {
+              padding-top: 0;
+            }
+            .btn_detail {
+              .white {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include xs {
+    .scbanner {
+      .container {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      &__wrapper {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      &__control {
+        padding-right: calc(var(--gap) / 2);
+        padding-left: calc(var(--gap) / 2);
+      }
+    }
+    .article {
+      padding-bottom: 78px;
+      &__wrapper {
+        padding: 0 15px;
+      }
+      &__title {
+        br {
+          display: none;
+        }
+      }
+    }
+    .screlated {
+      &__title {
+        --wLine: 175px;
+      }
+      &__wrapper {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      &__list {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  @include xxs {
+    .screlated {
+      &__list {
+        &-item {
+          display: initial;
+          .image {
+            padding-bottom: 55.5%;
+          }
+          .textbox {
+            .title {
+              padding-top: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include maxW(515px) {
+    .screlated {
+      &__title {
+        --wLine: 135px;
+      }
+    }
+  }
+  @include maxW(415px) {
+    .screlated {
+      &__title {
+        --wLine: 105px;
+      }
+    }
+  }
+  @include maxW(375px) {
+    .screlated {
+      &__title {
+        --wLine: 90px;
+      }
+    }
+  }
+  @include maxW(325px) {
+    .screlated {
+      &__title {
+        --wLine: 65px;
+      }
+    }
+  }
+}

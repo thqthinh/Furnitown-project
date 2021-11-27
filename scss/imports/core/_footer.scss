@@ -1,0 +1,112 @@
+// css footer
+.footer {
+  background-color: $blue-cl;
+  --ptop: 70px;
+  padding-top: var(--ptop);
+  &.ft_homepage {
+    --ptop: 520px;
+    padding-top: var(--ptop);
+    margin-top: -356px;
+    @include xs {
+      padding-top: var(--ptop);
+      margin-top: -491px;
+    }
+  }
+  .container {
+    padding-bottom: 200px;
+    position: relative;
+    text-align: center;
+  }
+  &__top {
+    position: absolute;
+    top: -223px;
+    right: -43px;
+    z-index: 1;
+  }
+  &__logo {
+    position: relative;
+    margin-bottom: 50px;
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 430px;
+      height: 1px;
+      background-color: $yellow-light-text-cl;
+      opacity: 0.5;
+    }
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 430px;
+      height: 1px;
+      background-color: $yellow-light-text-cl;
+      opacity: 0.5;
+    }
+  }
+  &__about {
+    .desc {
+      letter-spacing: 0.55px;
+      line-height: 2.6rem;
+    }
+  }
+  &__backtotop {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    transform: rotate(90deg);
+    cursor: pointer;
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -146px;
+      height: 1px;
+      width: 132px;
+      opacity: 0.5;
+      background-color: $yellow-light-text-cl;
+      animation: backToTop 1.5s infinite alternate;
+    }
+    span {
+      color: $gray-text-cl;
+      font-size: 1rem;
+      line-height: 2.6rem;
+      font-family: arial, sans-serif;
+    }
+  }
+  @include sm {
+    &__logo {
+      &::before,
+      &::after {
+        width: 280px;
+      }
+    }
+  }
+  @include xs {
+    &__top {
+      top: -35px;
+      position: relative;
+      right: 0;
+    }
+    &__logo {
+      &::before,
+      &::after {
+        width: 160px;
+      }
+    }
+  }
+  @include maxW(475px) {
+    &__logo {
+      &::before,
+      &::after {
+        width: 100px;
+      }
+    }
+  }
+}

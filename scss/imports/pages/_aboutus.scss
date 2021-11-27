@@ -1,0 +1,285 @@
+.aboutuspage {
+  .scabout {
+    --ptop: 170px;
+    --mb: 70px;
+    padding-top: var(--ptop);
+    &__banner {
+      margin-bottom: var(--mb);
+      .textbox {
+        text-align: center;
+        margin-bottom: 45px;
+        .title {
+          color: $brown-light-cl;
+          font-family: er;
+          margin-bottom: 18px;
+        }
+        .desc {
+          line-height: 2rem;
+          letter-spacing: 1.4px;
+        }
+      }
+      &-image {
+        img {
+          display: block;
+        }
+      }
+    }
+    &__work {
+      &-heading {
+        margin-bottom: 30px;
+        .textbox {
+          text-align: center;
+          .desc {
+            max-width: 790px;
+            line-height: 2rem;
+            letter-spacing: 1.4px;
+            margin-left: auto;
+            margin-right: auto;
+            span {
+              display: block;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      .line {
+        --height: 235px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1px;
+        height: var(--height);
+        background-color: $gray-line-cl;
+      }
+      &-bottom {
+        --pright: 30px;
+        --pleft: 30px;
+        --mb: 150px;
+        margin-bottom: var(--mb);
+        padding-left: var(--pleft);
+        padding-right: var(--pright);
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 0 70px;
+        .left {
+          max-width: 400px;
+          .textbox {
+            .desc {
+              max-width: 355px;
+              line-height: 4.6rem;
+              letter-spacing: 1.4px;
+            }
+          }
+        }
+        .right {
+          --ptop: 130px;
+          padding-top: var(--ptop);
+        }
+      }
+    }
+    &__author {
+      &-top {
+        .textbox {
+          text-align: center;
+          .desc {
+            max-width: 692px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 2.6rem;
+            letter-spacing: 1.4px;
+            margin-bottom: 30px;
+          }
+          .heading {
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 2.6rem;
+          }
+        }
+      }
+      &-bottom {
+        --mb: 85px;
+        margin-top: 40px;
+
+        .image {
+          position: relative;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: var(--mb);
+          img {
+            display: block;
+          }
+          .signature {
+            position: absolute;
+            bottom: -35px;
+            right: -27px;
+          }
+        }
+        .textbox {
+          .desc {
+            line-height: 2.6rem;
+            letter-spacing: 1.4px;
+            max-width: 586px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &__btn {
+      margin-top: 47px;
+      margin-bottom: 142px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 30px;
+    }
+    @include sm {
+      --ptop: 130px;
+      --mb: 50px;
+      &__work {
+        &-heading {
+          .textbox {
+            .desc {
+              max-width: 500px;
+              line-height: 2.6rem;
+              span {
+                display: initial;
+                margin-top: 0;
+              }
+            }
+          }
+        }
+        .line {
+          --height: 185px;
+        }
+        &-bottom {
+          grid-template-columns: 1fr;
+          --mb: 100px;
+          .left {
+            max-width: initial;
+            .textbox {
+              .desc {
+                max-width: 500px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                br {
+                  display: none;
+                }
+              }
+            }
+          }
+          .right {
+            --ptop: 80px;
+            .image {
+              position: relative;
+              padding-bottom: 65.5%;
+              img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                object-fit: cover;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+      &__author {
+        &-top {
+          .textbox {
+            .desc {
+              max-width: 500px;
+            }
+          }
+        }
+      }
+    }
+    @include xs {
+      --ptop: 70px;
+      &__work {
+        .line {
+          --height: 135px;
+        }
+        &-bottom {
+          --pright: 0px;
+          --pleft: 0px;
+          --mb: 70px;
+          .right {
+            --ptop: 40px;
+            .image {
+              padding-bottom: 60.5%;
+            }
+          }
+        }
+      }
+      &__btn {
+        margin-bottom: 102px;
+      }
+    }
+    @include xxs {
+      .container {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      &__banner {
+        .textbox {
+          padding-right: calc(var(--gap) / 2);
+          padding-left: calc(var(--gap) / 2);
+        }
+      }
+      &__work {
+        &-heading {
+          padding-right: calc(var(--gap) / 2);
+          padding-left: calc(var(--gap) / 2);
+        }
+        .line {
+          --height: 105px;
+        }
+        &-bottom {
+          --pright: 0px;
+          --pleft: 0px;
+          --mb: 70px;
+          .left {
+            padding-right: calc(var(--gap) / 2);
+            padding-left: calc(var(--gap) / 2);
+          }
+          .right {
+            --ptop: 40px;
+            .image {
+              padding-bottom: 60.5%;
+            }
+          }
+        }
+      }
+      &__author {
+        &-top {
+          padding-right: calc(var(--gap) / 2);
+          padding-left: calc(var(--gap) / 2);
+        }
+        &-bottom {
+          .image {
+            .signature {
+              right: -10px;
+            }
+          }
+          .textbox {
+            padding-right: calc(var(--gap) / 2);
+            padding-left: calc(var(--gap) / 2);
+          }
+        }
+      }
+      &__btn {
+        padding-right: calc(var(--gap) / 2);
+        padding-left: calc(var(--gap) / 2);
+      }
+    }
+    @include maxW(475px) {
+      &__btn {
+        margin-bottom: 72px;
+      }
+    }
+  }
+}

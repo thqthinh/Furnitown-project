@@ -1,0 +1,101 @@
+.newspage {
+  .schero {
+    background-image: url(../img/hero-pd.jpg);
+    &__text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .container {
+        height: 100%;
+        position: relative;
+        .textbox {
+          position: absolute;
+          bottom: 116px;
+          left: 0;
+          padding: 0 30px;
+          transform: translateY(-50%);
+          z-index: 2;
+        }
+      }
+    }
+    &__overlay {
+      z-index: 1;
+    }
+  }
+  .scnews {
+    margin-bottom: 80px;
+    &__wrapper {
+      --gap: 15px;
+      margin-left: var(--gap);
+      margin-right: var(--gap);
+      margin-top: -96px;
+      padding-top: 58px;
+      border-top: 1px solid $white-cl;
+      position: relative;
+      z-index: 200;
+    }
+    &__list {
+      grid-gap: 34px var(--gapCl);
+      display: none;
+      &.active {
+        display: grid;
+      }
+      &-item {
+        &:hover {
+          .textbox {
+            background-color: #6d5019;
+            @include transition($t);
+            .btn_detail {
+              @include transition($t);
+              color: $white-text-cl;
+              .black {
+                opacity: 0;
+                @include transition($t);
+                pointer-events: none;
+              }
+              .white {
+                opacity: 1;
+                @include transition($t);
+                pointer-events: visible;
+              }
+            }
+            .title,
+            .desc {
+              color: $white-text-cl;
+              @include transition($t);
+            }
+          }
+        }
+        .textbox {
+          padding: 0 20px;
+          @include transition($t);
+          .title,
+          .desc {
+            @include transition($t);
+          }
+          .btn_detail {
+            @include transition($t);
+            position: relative;
+            .white {
+              position: absolute;
+              top: 2px;
+              left: 0;
+              opacity: 0;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include xxs {
+    .scnews {
+      .container {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}

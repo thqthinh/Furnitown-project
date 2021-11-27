@@ -1,0 +1,126 @@
+.produclistpage {
+  .schero {
+    background-image: url(../img/banner-pd.jpg);
+  }
+  .scproducts {
+    padding-top: var(--pd-section);
+    &__item {
+      padding: 0 15px;
+      &-list {
+        --wItem: 315px;
+        --gapCl: 27px;
+        display: grid;
+        grid-template-columns: repeat(3, var(--wItem));
+        grid-template-rows: 500px;
+        grid-gap: 50px var(--gapCl);
+        position: relative;
+        &::before {
+          content: "";
+          height: 100%;
+          width: 1px;
+          position: absolute;
+          top: 0;
+          left: calc(var(--wItem) + (var(--gapCl) / 2));
+          background-color: $gray-light-cl;
+        }
+        &::after {
+          content: "";
+          height: 100%;
+          width: 1px;
+          position: absolute;
+          top: 0;
+          right: calc(var(--wItem) + (var(--gapCl) / 2));
+          background-color: $gray-light-cl;
+        }
+        .item {
+          .image {
+            padding-bottom: 116.2%;
+          }
+        }
+      }
+    }
+    &__bottom {
+      margin-top: 120px;
+      margin-bottom: 40px;
+      text-align: center;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+
+      svg {
+        opacity: 0.5;
+        @include transition($t);
+      }
+      .btn {
+        display: block;
+        margin-top: 2px;
+        opacity: 0.5;
+        @include transition($t);
+      }
+      &:hover {
+        svg {
+          @include transition($t);
+        }
+        .btn {
+          @include transition($t);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @include md {
+    .scproducts {
+      &__item {
+        &-list {
+          --wItem: 436.5px;
+          grid-template-columns: repeat(2, var(--wItem));
+          grid-template-rows: 1fr;
+        }
+      }
+    }
+  }
+  @include sm {
+    .scproducts {
+      &__item {
+        &-list {
+          --wItem: 316.5px;
+          .item {
+            .image {
+              .scale-image {
+                filter: grayscale(0%);
+                -webkit-filter: grayscale(0%);
+                -moz-filter: grayscale(0%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include xs {
+    .scproducts {
+      --pd-section: 65px;
+      &__item {
+        &-list {
+          --wItem: 1fr;
+          grid-template-columns: repeat(1, var(--wItem));
+          &:before,
+          &:after {
+            display: none;
+          }
+          .item {
+            .image {
+              padding-bottom: 76.5%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include xxs {
+    .scproducts {
+      --pd-section: 25px;
+    }
+  }
+}
